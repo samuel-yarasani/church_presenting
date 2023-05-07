@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Appbar from "./componets/appbar";
+import Bible from "./componets/bible";
+import Pre from "./componets/pre";
+import Livepre from "./componets/Livepre";
+import TabsPage from "./componets/tabs";
+import {RecoilRoot} from "recoil";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <RecoilRoot>
+          <Appbar/>
+          <div className="layout">
+            <div className="bible">
+              <Bible/>
+            </div>
+            <div className="pre">
+              <Pre/>
+            </div>
+            <div className="live">
+              <Livepre/>
+            </div>
+            <div className="tabs">
+              <TabsPage/>
+            </div>
+          </div>
+        </RecoilRoot>
+      </div>
   );
 }
 

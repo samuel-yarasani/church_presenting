@@ -6,9 +6,18 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.2.3",
+    "fuse.js": "^6.6.2",
     "react": "^18.2.0",
+    "react-aspect-ratio": "^1.1.6",
+    "react-bootstrap": "^2.7.3",
     "react-dom": "^18.2.0",
+    "react-dropdown-select": "^4.9.3",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
+    "react-textfit": "^1.1.1",
+    "recoil": "^0.7.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
