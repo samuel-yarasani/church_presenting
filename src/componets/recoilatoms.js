@@ -2,7 +2,7 @@
 
 import {atom} from "recoil";
 import bible from "./data/bible.json";
-import tbible from "./data/biblett.json";
+import tbible from "./data/biblet.json";
 
 const options = [{label: "Genesis", value: 1}, {label: "Exodus", value: 2}, {
     label: "Leviticus",
@@ -59,7 +59,7 @@ const options = [{label: "Genesis", value: 1}, {label: "Exodus", value: 2}, {
     label: "Jude",
     value: 65
 }, {label: "Revelation", value: 66},];
-const ttb = [{label: "ఆదికాండము", value: 1}, {label: "నిర్గమకాండము", value: 2}, {
+const tb = [{label: "ఆదికాండము", value: 1}, {label: "నిర్గమకాండము", value: 2}, {
     label: "లేవీయకాండము",
     value: 3
 }, {label: "సంఖ్యాకాండము", value: 4}, {label: "ద్వితీయోపదేశకాండము", value: 5}, {
@@ -114,79 +114,6 @@ const ttb = [{label: "ఆదికాండము", value: 1}, {label: "ని�
     label: "2 యోహాను",
     value: 63
 }, {label: "3 యోహాను", value: 64}, {label: "యూదా", value: 65}, {label: "ప్రకటన", value: 66},];
-
-// Hindi translations of the book names
-// const tb = [
-//     { label: "उत्पत्ति", value: 1 },
-//     { label: "निर्गमन", value: 2 },
-//     { label: "लैव्यवस्था", value: 3 },
-//     { label: "गिनती", value: 4 },
-//     { label: "व्यवस्थाओं का विवरण", value: 5 },
-//     { label: "यहोशू", value: 6 },
-//     { label: "न्यायियों", value: 7 },
-//     { label: "रूत", value: 8 },
-//     { label: "1 शमूएल", value: 9 },
-//     { label: "2 शमूएल", value: 10 },
-//     { label: "1 राजा", value: 11 },
-//     { label: "2 राजा", value: 12 },
-//     { label: "1 इतिहास", value: 13 },
-//     { label: "2 इतिहास", value: 14 },
-//     { label: "एज्रा", value: 15 },
-//     { label: "नहेमायाह", value: 16 },
-//     { label: "एस्तेर", value: 17 },
-//     { label: "अय्यूब", value: 18 },
-//     { label: "भजन संहिता", value: 19 },
-//     { label: "नीतिवचन", value: 20 },
-//     { label: "सभित्याचार", value: 21 },
-//     { label: "श्रेष्ठ गीत", value: 22 },
-//     { label: "यशायाह", value: 23 },
-//     { label: "यिर्मयाह", value: 24 },
-//     { label: "विलापगीत", value: 25 },
-//     { label: "यहेजकेल", value: 26 },
-//     { label: "दानिय्येल", value: 27 },
-//     { label: "होशे", value: 28 },
-//     { label: "योएल", value: 29 },
-//     { label: "आमोस", value: 30 },
-//     { label: "ओबद्दाह", value: 31 },
-//     { label: "योना", value: 32 },
-//     { label: "मीका", value: 33 },
-//     { label: "नहूम", value: 34 },
-//     { label: "हबक्कूक", value: 35 },
-//     { label: "सपन्याह", value: 36 },
-//     { label: "हाग्गै", value: 37 },
-//     { label: "जकरियाह", value: 38 },
-//     { label: "मलाकी", value: 39 },
-//     { label: "मत्ती", value: 40 },
-//     { label: "मरकुस", value: 41 },
-//     { label: "लूका", value: 42 },
-//     { label: "यूहन्ना", value: 43 },
-//     { label: "प्रेरितों के काम", value: 44 },
-//     { label: "रोमियों", value: 45 },
-//     { label: "1 कुरिन्थीयों", value: 46 },
-//     { label: "2 कुरिन्थीयों", value: 47 },
-//     { label: "गलातियों", value: 48 },
-//     { label: "इफिसियों", value: 49 },
-//     { label: "फिलिप्पियों", value: 50 },
-//     { label: "कुलुस्सियों", value: 51 },
-//     { label: "1 थिस्सलुनीकियों", value: 52 },
-//     { label: "2 थिस्सलुनीकियों", value: 53 },
-//     { label: "1 तीमुथियुस", value: 54 },
-//     { label: "2 तीमुथियुस", value: 55 },
-//     { label: "तीतुस", value: 56 },
-//     { label: "फिलेमोन", value: 57 },
-//     { label: "इब्रानियों", value: 58 },
-//     { label: "याकूब", value: 59 },
-//     { label: "1 पतरस", value: 60 },
-//     { label: "2 पतरस", value: 61 },
-//     { label: "1 यूहन्ना", value: 62 },
-//     { label: "2 यूहन्ना", value: 63 },
-//     { label: "3 यूहन्ना", value: 64 },
-//     { label: "यहूदा", value: 65 },
-//     { label: "प्रकटणी", value: 66 }
-//   ];
-
-
-
 const bibleBooks = [{osis: "Gen", number: 1}, {osis: "Exod", number: 2}, {osis: "Lev", number: 3}, {
     osis: "Num",
     number: 4
@@ -271,7 +198,7 @@ export const dynamicState = atom({
 });
 const mc = new BroadcastChannel("mc");
 
-export default function sendLive(mes) {
+export default function sendLive(mes, chanel="cpLive") {
     mc.postMessage(mes);
     const s = JSON.parse(localStorage.getItem("s"));
     const ws = s && s.ws ? new WebSocket(`ws://${s.ws}:4444`) : null;
@@ -280,22 +207,222 @@ export default function sendLive(mes) {
             console.log('WebSocket connection established.');
             ws.send(JSON.stringify({
                 "request-type": "SetSourceSettings",
-                "sourceName": "cpLive",
+                "sourceName": chanel,
                 "sourceSettings": {
-                    "url": `data:text/html;charset=utf-8,
-<div class="box" style="  
+                    "url": `data:text/html;charset=utf-8,<div class="box" style="  
 height: 100vh;
 text-align: center;
 overflow: hidden;
 display: flex;
 justify-content: center;
 align-items: center;
-font-family: Arial, sans-serif;
-color: rgba(0, 0, 0, 0);
 ">
-  ${encodeURIComponent(mes)}
-</div>
-`
+${encodeURIComponent(mes)}
+</div>color: rgba(0, 0, 0, 0);
+<script>
+(function(root, factory) {
+"use strict";
+
+// UMD shim
+if (typeof define === "function" && define.amd) {
+// AMD
+define([], factory);
+} else if (typeof exports === "object") {
+// Node/CommonJS
+module.exports = factory();
+} else {
+// Browser
+root.textFit = factory();
+}
+
+}(typeof global === "object" ? global : this, function () {
+"use strict";
+
+var defaultSettings = {
+alignVert: false, // if true, textFit will align vertically using css tables
+alignHoriz: false, // if true, textFit will set text-align: center
+multiLine: false, // if true, textFit will not set white-space: no-wrap
+detectMultiLine: true, // disable to turn off automatic multi-line sensing
+minFontSize: 6,
+maxFontSize: 80,
+reProcess: true, // if true, textFit will re-process already-fit nodes. Set to 'false' for better performance
+widthOnly: false, // if true, textFit will fit text to element width, regardless of text height
+alignVertWithFlexbox: false, // if true, textFit will use flexbox for vertical alignment
+};
+
+return function textFit(els, options) {
+
+if (!options) options = {};
+
+var settings = {};
+for(var key in defaultSettings){
+  if(options.hasOwnProperty(key)){
+    settings[key] = options[key];
+  } else {
+    settings[key] = defaultSettings[key];
+  }
+}
+
+if (typeof els.toArray === "function") {
+  els = els.toArray();
+}
+
+var elType = Object.prototype.toString.call(els);
+if (elType !== '[object Array]' && elType !== '[object NodeList]' &&
+        elType !== '[object HTMLCollection]'){
+  els = [els];
+}
+
+for(var i = 0; i < els.length; i++){
+  processItem(els[i], settings);
+}
+};
+
+function processItem(el, settings){
+if (!isElement(el) || (!settings.reProcess && el.getAttribute('textFitted'))) {
+  return false;
+}
+
+if(!settings.reProcess){
+  el.setAttribute('textFitted', 1);
+}
+
+var innerSpan, originalHeight, originalHTML, originalWidth;
+var low, mid, high;
+
+originalHTML = el.innerHTML;
+originalWidth = innerWidth(el);
+originalHeight = innerHeight(el);
+
+if (!originalWidth || (!settings.widthOnly && !originalHeight)) {
+  if(!settings.widthOnly)
+    throw new Error('Set a static height and width on the target element ' + el.outerHTML +
+      ' before using textFit!');
+  else
+    throw new Error('Set a static width on the target element ' + el.outerHTML +
+      ' before using textFit!');
+}
+
+if (originalHTML.indexOf('textFitted') === -1) {
+  innerSpan = document.createElement('span');
+  innerSpan.className = 'textFitted';
+  innerSpan.style['display'] = 'inline-block';
+  innerSpan.innerHTML = originalHTML;
+  el.innerHTML = '';
+  el.appendChild(innerSpan);
+} else {
+  innerSpan = el.querySelector('span.textFitted');
+  // Remove vertical align if we're reprocessing.
+  if (hasClass(innerSpan, 'textFitAlignVert')){
+    innerSpan.className = innerSpan.className.replace('textFitAlignVert', '');
+    innerSpan.style['height'] = '';
+    el.className.replace('textFitAlignVertFlex', '');
+  }
+}
+
+if (settings.alignHoriz) {
+  el.style['text-align'] = 'center';
+  innerSpan.style['text-align'] = 'center';
+}
+
+var multiLine = settings.multiLine;
+if (settings.detectMultiLine && !multiLine &&
+    innerSpan.getBoundingClientRect().height >= parseInt(window.getComputedStyle(innerSpan)['font-size'], 10) * 2){
+  multiLine = true;
+}
+
+if (!multiLine) {
+  el.style['white-space'] = 'nowrap';
+}
+
+low = settings.minFontSize;
+high = settings.maxFontSize;
+
+var size = low;
+while (low <= high) {
+  mid = (high + low) >> 1;
+  innerSpan.style.fontSize = mid + 'px';
+  var innerSpanBoundingClientRect = innerSpan.getBoundingClientRect();
+  if (
+    innerSpanBoundingClientRect.width <= originalWidth 
+    && (settings.widthOnly || innerSpanBoundingClientRect.height <= originalHeight)
+  ) {
+    size = mid;
+    low = mid + 1;
+  } else {
+    high = mid - 1;
+  }
+}
+if( innerSpan.style.fontSize != size + 'px' ) innerSpan.style.fontSize = size + 'px';
+
+if (settings.alignVert) {
+  addStyleSheet();
+  var height = innerSpan.scrollHeight;
+  if (window.getComputedStyle(el)['position'] === "static"){
+    el.style['position'] = 'relative';
+  }
+  if (!hasClass(innerSpan, "textFitAlignVert")){
+    innerSpan.className = innerSpan.className + " textFitAlignVert";
+  }
+  innerSpan.style['height'] = height + "px";
+  if (settings.alignVertWithFlexbox && !hasClass(el, "textFitAlignVertFlex")) {
+    el.className = el.className + " textFitAlignVertFlex";
+  }
+}
+}
+
+function innerHeight(el){
+var style = window.getComputedStyle(el, null);
+return el.getBoundingClientRect().height -
+  parseInt(style.getPropertyValue('padding-top'), 10) -
+  parseInt(style.getPropertyValue('padding-bottom'), 10);
+}
+
+function innerWidth(el){
+var style = window.getComputedStyle(el, null);
+return el.getBoundingClientRect().width -
+  parseInt(style.getPropertyValue('padding-left'), 10) -
+  parseInt(style.getPropertyValue('padding-right'), 10);
+}
+
+function isElement(o){
+return (
+  typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
+  o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName==="string"
+);
+}
+
+function hasClass(element, cls) {
+return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+function addStyleSheet() {
+if (document.getElementById("textFitStyleSheet")) return;
+var style = [
+  ".textFitAlignVert{",
+    "position: absolute;",
+    "top: 0; right: 0; bottom: 0; left: 0;",
+    "margin: auto;",
+    "display: flex;",
+    "justify-content: center;",
+    "flex-direction: column;",
+  "}",
+  ".textFitAlignVertFlex{",
+    "display: flex;",
+  "}",
+  ".textFitAlignVertFlex .textFitAlignVert{",
+    "position: static;",
+  "}",].join("");
+
+var css = document.createElement("style");
+css.type = "text/css";
+css.id = "textFitStyleSheet";
+css.innerHTML = style;
+document.body.appendChild(css);
+}
+}));
+textFit(document.getElementsByClassName('box'));
+</script>`
                 },
                 "message-id": "1"
             }));
@@ -386,7 +513,7 @@ export function getRef(bookf, chapter, verse, tbd) {
 
 export function getVerce(bookf, chapter, verse) {
     let book = bookf.value;
-    var tbd = ttb[book - 1].label;
+    var tbd = tb[book - 1].label;
     let e = bible.Book[book - 1].Chapter[chapter - 1].Verse[verse - 1].Verse;
     let t = tbible.Book[book - 1].Chapter[chapter - 1].Verse[verse - 1].Verse;
     let r = getRef(bookf, chapter, verse, tbd);
